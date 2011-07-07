@@ -24,7 +24,7 @@
 # )
 
 # Name of the current theme to host during theme development.
-# THEME = ""
+THEME = ""
 
 # If True, the south application will be automatically added to the
 # INSTALLED_APPS setting. This setting is not defined in
