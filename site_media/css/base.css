@@ -1,0 +1,238 @@
+html {
+  /*font-family: Cambria, Georgia, "Times New Roman", Times, serif;*/
+  /* try a sans-serif stack */
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  /* match 960.css 
+  width: 940px;
+  padding: 0 10px;
+  margin: 0 auto;
+  */
+}
+
+/* 1em = 16px, 1.5em = 24px
+ * 24px is the magic number (line height)
+ */
+body {
+  background-color: #FFFFF5;    /* faint cream */
+  line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #222;
+  /* serif for the headers - nice contrast */
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+h1 {
+  color: #63A2E6;
+  font-size: 3em; /* 48px --> 36 ÷ 16 = 3 */
+  line-height: 2em; /* 48px --> 36 ÷ 24 = 2 */
+}
+
+h2 {
+  font-size: 1.375em; /* 22px --> 22 ÷ 16 = 1.375 */
+  line-height: 1.0909em; /* 24px --> 24 ÷ 22 = 1.090909(09) */
+}
+
+h3 {
+  font-size: 1.25em; /* 20px --> 20 ÷ 16 = 1.25 */
+  line-height: 1.2em; /* 24px --> 24 ÷ 20 = 1.2 */
+}
+
+h4 {
+  font-size: 1.125em; /* 18px --> 18 ÷ 16 = 1.125 */
+  line-height: 1.333em; /* 24px --> 24 ÷ 18 = 1.3333333(3) */
+}
+
+h5, h6 {
+  font-size: 1em; /* 16px --> 16 ÷ 16 = 1 */
+  line-height: 1.5em; /* 24px --> 24 ÷ 16 = 1.5 */
+}
+
+body > p:first-of-type {
+  font-size: 1.125em;
+    /* 18px → 18 ÷ 16 = 1.125 */
+
+  line-height: 1.333em;
+    /* 24px → 24 ÷ 18 = 1.3333(3) */
+}
+
+/* this DOESN'T work if it's before the previous statement
+ * why? seems really weird
+ */
+p {
+    margin-bottom: 24px;
+}
+
+/*--- QUOTES ---*/
+blockquote {
+  margin: 0 60px 0 45px;
+  border-left: 5px solid #ccc;
+  padding-left: 10px;
+  text-indent: -0.4em;
+}
+
+blockquote b {
+  display: block;
+  text-indent: 0;
+}
+
+/*--- LISTS ---*/
+/* prepended #content to all because these rules were interfering with the drop-down menus
+ * there may be a better way to do this
+ */
+#content ul, ol {
+  margin-bottom: 24px;
+    /* Remember, if your magic number is
+    different to this, use your own. */
+}
+
+#content ul {
+  list-style: square outside;
+}
+
+#content ul ul,
+#content ol ol {
+  margin: 0 0 0 60px;
+}
+
+
+/*
+ * many thanks to http://csswizardry.com/demos/css-dropdown/
+ * their implementation is far more elegant than my own
+ */
+/*------------------------------------*\
+    NAV
+\*------------------------------------*/
+#nav{
+    list-style:none;
+    font-weight:bold;
+    margin-bottom:10px;
+    /* Clear floats */
+    float:left;
+    width:100%;
+    /* Bring the nav above everything else--uncomment if needed.
+    position:relative;
+    z-index:5;
+    */
+}
+#nav li{
+    float:left;
+    margin-right:10px;
+    position:relative;
+}
+#nav a{
+    display:block;
+    padding:7px;
+    color:white;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius:5px;
+    text-decoration:none;
+    /*
+    -moz-box-shadow: 0 0 5px 5px #111;
+    -webkit-box-shadow: 0 0 5px 5px#111;
+    box-shadow: 0 0 5px 5px #111;
+    */
+}
+
+#nav a:hover{
+    color: #63A2E6;
+    background:rgba(0, 0, 0, 0.5);
+    /* text-decoration:underline; */
+}
+
+/*--- DROPDOWN ---*/
+#nav ul{
+    background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+    background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+    list-style:none;
+    position:absolute;
+    left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+    border-radius:0px 5px 5px 5px;
+}
+#nav ul li{
+    /* padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
+    /* border-top: solid 1px #555; */
+    float:none;
+}
+#nav ul a{
+    white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+    border-radius:0px;
+}
+
+#nav li:hover ul{ /* Display the dropdown on hover */
+    left:0; /* Bring back on-screen when needed */
+}
+#nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+    /* background:#6b0c36; */
+    color: #63A2E6;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius:5px 5px 0px 0px;
+    /* text-decoration:underline; */
+}
+#nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+    text-decoration:none;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius:0px;
+}
+#nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+    /* text-decoration:underline; */
+    color: #63A2E6;
+}
+
+
+/*--- ALLIANCE ---*/
+#header {
+    color: #fdfdfd;
+    background:url('../img/gfrocks2-1600.jpg') center no-repeat;
+    height: 264px;
+    margin-bottom:24px;
+}
+
+#header-strip {
+    position:relative;
+    top:24px;
+    height:96px;
+    background-color:rgba(0, 0, 0, 0.5);
+}
+
+#header-content {
+    width:940px;
+    margin: 0 auto;
+}
+
+#sidebar {
+    /* adds border to sidebar
+     * negative margins make me a little uneasy:
+     * we'll see if this breaks layout later
+     */
+    margin-left:-30px;
+    padding-left:36px;
+    border-left:double #999 4px;
+}
+
+#sidebar ol {
+    font-size: 90%;
+    list-style-type:none;
+}
+
+#sidebar p { margin-bottom: 0px; }
+#sidebar ol li { margin-bottom: 24px; }
+
+#footer {
+    color:#fdfdfd;
+    background-color:rgba(0, 0, 0, 0.9);
+}
+
+#footer-content {
+    width:100%;
+    margin:0 auto;
+}
+
+a { color: #63A2E6; text-decoration:none; }
+/* a:hover { color: #6EB4FF; text-decoration: underline; } subtle */
+a:hover { color: #8CC3FF; text-decoration: underline; }

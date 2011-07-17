@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>Gallery</title>
+    </head>
+    <body>
+        <h1>{{ page.gallery.title }}</h1>
+        <p>{{ page.gallery.notes }}</p>
+        {% for galleryimage in page.gallery.galleryimage_set.all %}
+        <img src="{{MEDIA_URL}}{{galleryimage.image}}" />
+        {% endfor %}
+    </body>
+</html>
