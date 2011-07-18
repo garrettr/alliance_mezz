@@ -235,7 +235,10 @@ blockquote b {
 }
 
 #footer-content {
-    font-size:85%;
+    font-size:90%;
+    font-family:Georgia, Cambria, "Times New Roman", serif;
+margin: 0 auto;
+width: 940px;
 }
 
 
