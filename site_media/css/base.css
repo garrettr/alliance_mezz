@@ -228,26 +228,15 @@ blockquote b {
 #sidebar p { margin-bottom: 0px; }
 #sidebar ol li { margin-bottom: 24px; }
 
+#container {
+    min-height:100%;
+}
+
 #footer {
     color:#fdfdfd;
     background-color:rgba(0, 0, 0, 0.9);
-
-    position:absolute;
-	width:100%;
-	bottom:0; /* stick to bottom */
-
 }
 
-#container {
-    height:auto !important; /* real browsers */
-    height:100%; /* IE6: treaded as min-height*/
-    /* min-height:100%; /* real browsers */
-}    
-
-#footer-content {
-    width:940px;
-    margin:0 auto;
-}
 
 a { color: #63A2E6; text-decoration:none; }
 /* a:hover { color: #6EB4FF; text-decoration: underline; } subtle */
