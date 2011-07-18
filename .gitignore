@@ -16,8 +16,3 @@ local_settings.py
 # Ignore collected dir for testing staticfiles
 collected
 
-# Ignore images
-*.jpg
-*.gif
-*.png
-

@@ -1,6 +1,12 @@
 README
 ------
 
+Dependencies:
+
+* Django
+* Mezzanine
+* PIL
+
 Todo:
 
 1. Improve the templates a bit, so it's presentable
