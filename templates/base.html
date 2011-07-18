@@ -1,70 +1,74 @@
 {% load pages_tags mezzanine_tags i18n %}
 <html>
-  <head>
+    <head>
 
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
-    <meta name="keywords" content="{% block meta_keywords %}{% endblock %}" /> 
-    <meta name="description" content="{% block meta_description %}{% endblock %}" /> 
-    <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+        <meta name="keywords" content="{% block meta_keywords %}{% endblock %}" /> 
+        <meta name="description" content="{% block meta_description %}{% endblock %}" /> 
+        <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
 
-    {% if "mezzanine.blog"|is_installed %}
-    <link rel="alternate" type="application/rss+xml" title="RSS" 
-    href="{% url blog_post_feed "rss" %}" />
-    <link rel="alternate" type="application/atom+xml" title="Atom"  
-    href="{% url blog_post_feed "atom" %}" />
-    {% endif %}
+        {% if "mezzanine.blog"|is_installed %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" 
+        href="{% url blog_post_feed "rss" %}" />
+        <link rel="alternate" type="application/atom+xml" title="Atom"  
+        href="{% url blog_post_feed "atom" %}" />
+        {% endif %}
 
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/960.css" type="text/css" />
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" />
-    <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css" type="text/css" />
-    {% block extra_head %}{% endblock %}
+        <link rel="stylesheet" href="{{ MEDIA_URL }}css/960.css" type="text/css" />
+        <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" type="text/css" />
+        <link rel="stylesheet" href="{{ MEDIA_URL }}css/base.css" type="text/css" />
+        {% block extra_head %}{% endblock %}
 
-  </head>
-  <body id="{% block body_id %}{% endblock %}">
+    </head>
+    <body id="{% block body_id %}{% endblock %}">
 
-    <div id="header">
-      <div id="header-strip">
-        <div id="header-content">
-          {% if settings.SITE_TITLE or settings.SITE_TAGLINE %}
-          {% if settings.SITE_TITLE %}
-          <h1>{{ settings.SITE_TITLE }}</h1>
-          {% endif %}
-          {% endif %}
-
-          {% page_menu "pages/menus/dropdown.html" %}
+        <div id="header">
+            <div id="header-strip">
+                <div class="container_12" >
+                    <div class="grid_3">
+                        <img id="logo" src="{{MEDIA_URL}}img/alogo-comp.png" />
+                    </div>
+                    <div class="grid_6">
+                        {% page_menu "pages/menus/dropdown.html" %}
+                    </div>
+                    <div class="grid_3">
+                        {% include "includes/sexysearch.html" %}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
 
-    <div class="container_12 clearfix" id="container">
+        <div class="container_12 clearfix" id="container">
 
-      <div class="grid_8 suffix_1" id="content">
-        <h1>{% block title %}{% endblock %}</h1>
-        <div id="breadcrumb-menu">
-          {% block breadcrumb_menu %}
-          {% page_menu "pages/menus/breadcrumb.html" %}
-          {% endblock %}
+            <div class="grid_8 suffix_1" id="content">
+                <div id="tab">
+                <h1>{% block title %}{% endblock %}</h1>
+                <div id="breadcrumb-menu">
+                    {% block breadcrumb_menu %}
+                    {% page_menu "pages/menus/breadcrumb.html" %}
+                    {% endblock %}
+                </div>
+            </div>
+                {% block main %}{% endblock %}
+            </div>
+
+            <div class="grid_3" id="sidebar">
+                <p class="mezzanine">
+                {% trans "Powered by" %} 
+                <a href="http://mezzanine.jupo.org">Mezzanine</a><br />
+                <a href="{% url set_device "mobile" %}?next={{ request.path }}">
+                    {% trans "View Mobile Site." %}
+                </a>
+                </p>
+            </div>
+
         </div>
-        {% block main %}{% endblock %}
-      </div>
 
-      <div class="grid_3" id="sidebar">
-        <p class="mezzanine">
-        {% trans "Powered by" %} 
-        <a href="http://mezzanine.jupo.org">Mezzanine</a><br />
-        <a href="{% url set_device "mobile" %}?next={{ request.path }}">
-          {% trans "View Mobile Site." %}
-        </a>
-        </p>
-      </div>
-
-    </div>
-
-    <div id="footer">
-      <div id="footer-content">
-        <p>This site &copy; The Alliance for Appalachia, 2011<br />
-        Web design by <a href="http://garrett.im">Garrett Robinson</a></p>
-      </div>
-    </div>
-  </body>
+        <div id="footer">
+            <div id="footer-content">
+                <p>This site &copy; The Alliance for Appalachia, 2011<br />
+                Web design by <a href="http://garrett.im">Garrett Robinson</a></p>
+            </div>
+        </div>
+    </body>
 </html>

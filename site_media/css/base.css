@@ -114,7 +114,7 @@ blockquote b {
 \*------------------------------------*/
 #nav{
     list-style:none;
-    font-weight:bold;
+    /*font-weight:bold;*/
     margin-bottom:10px;
     /* Clear floats */
     float:left;
@@ -133,9 +133,8 @@ blockquote b {
     display:block;
     padding:7px;
     color:white;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius:5px;
     text-decoration:none;
+    font-size:90%;
     /*
     -moz-box-shadow: 0 0 5px 5px #111;
     -webkit-box-shadow: 0 0 5px 5px#111;
@@ -145,7 +144,6 @@ blockquote b {
 
 #nav a:hover{
     color: #63A2E6;
-    background:rgba(0, 0, 0, 0.5);
     /* text-decoration:underline; */
 }
 
@@ -160,8 +158,9 @@ blockquote b {
 }
 #nav ul li{
     /* padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
-    /* border-top: solid 1px #555; */
+    /* border-top: solid 1px #333; */
     float:none;
+    padding-right:5px;
 }
 #nav ul a{
     white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
@@ -174,19 +173,17 @@ blockquote b {
 #nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
     /* background:#6b0c36; */
     color: #63A2E6;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius:5px 5px 0px 0px;
+    background: black;
     /* text-decoration:underline; */
 }
 #nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
     text-decoration:none;
     color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius:0px;
 }
 #nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
     /* text-decoration:underline; */
     color: #63A2E6;
+    background: #222;
 }
 
 
@@ -194,15 +191,15 @@ blockquote b {
 #header {
     color: #fdfdfd;
     background:url('../img/gfrocks2-1600.jpg') center no-repeat;
-    height: 264px;
+    height: 216px; /* orig. 264px */
     margin-bottom:24px;
 }
 
 #header-strip {
     position:relative;
-    top:24px;
-    height:96px;
-    background-color:rgba(0, 0, 0, 0.5);
+    top:0;
+    background:rgba(0,0,0,0.7);
+    height:38px;
 }
 
 #header-content {
@@ -237,6 +234,10 @@ blockquote b {
     background-color:rgba(0, 0, 0, 0.9);
 }
 
+#footer-content {
+    font-size:85%;
+}
+
 
 a { color: #63A2E6; text-decoration:none; }
 /* a:hover { color: #6EB4FF; text-decoration: underline; } subtle */
@@ -247,3 +248,20 @@ a:hover { color: #8CC3FF; text-decoration: underline; }
     margin: 20px 0;
 }
 #breadcrumb-menu li { list-style-type: none; display: inline; margin-left: 0px; }
+
+#logo { float: left; }
+
+/*
+div#tab { 
+    position: relative; top: -60px;
+}
+    */
+
+#id_search {
+border: 0 none;
+    border-radius: 3px 3px 3px 3px;
+    margin: 8px 7px 5px 0;
+    outline: 0 none;
+    padding: 3px 6px;
+    width: 150px;
+}
