@@ -26,10 +26,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-h1 {
+#header-strip h1 {
   color: #63A2E6;
-  font-size: 3em; /* 48px --> 36 ÷ 16 = 3 */
-  line-height: 2em; /* 48px --> 36 ÷ 24 = 2 */
+  font-size: 3em; /* 48px --> 48 ÷ 16 = 3 */
+  line-height: 2em; /* 48px --> 48 ÷ 24 = 2 */
+}
+
+h1 {
+    font-size: 1.5em; /* 24px --> 24 / 16 = 1.5 */
+    line-height: 1em;   /* 24px --> 24 / 24 = 1 */
 }
 
 h2 {
@@ -226,13 +231,30 @@ blockquote b {
 #footer {
     color:#fdfdfd;
     background-color:rgba(0, 0, 0, 0.9);
+
+    position:absolute;
+	width:100%;
+	bottom:0; /* stick to bottom */
+
 }
 
+#container {
+    height:auto !important; /* real browsers */
+    height:100%; /* IE6: treaded as min-height*/
+    /* min-height:100%; /* real browsers */
+}    
+
 #footer-content {
-    width:100%;
+    width:940px;
     margin:0 auto;
 }
 
 a { color: #63A2E6; text-decoration:none; }
 /* a:hover { color: #6EB4FF; text-decoration: underline; } subtle */
 a:hover { color: #8CC3FF; text-decoration: underline; }
+
+/*---- MEZZANINE ----*/
+#breadcrumb-menu {
+    margin: 20px 0;
+}
+#breadcrumb-menu li { list-style-type: none; display: inline; margin-left: 0px; }

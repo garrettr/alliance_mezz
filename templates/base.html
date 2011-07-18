@@ -29,9 +29,6 @@
           {% if settings.SITE_TITLE %}
           <h1>{{ settings.SITE_TITLE }}</h1>
           {% endif %}
-          {% if settings.SITE_TAGLINE %}
-          <h2>{{ settings.SITE_TAGLINE }}</h2>
-          {% endif %}
           {% endif %}
 
           {% page_menu "pages/menus/dropdown.html" %}
@@ -39,7 +36,7 @@
       </div>
     </div>
 
-    <div class="container_12" id="container">
+    <div class="container_12 clearfix" id="container">
 
       <div class="grid_8 suffix_1" id="content">
         <h1>{% block title %}{% endblock %}</h1>

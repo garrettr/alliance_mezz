@@ -1,0 +1,28 @@
+{% load pages_tags i18n %}
+
+{% spaceless %}
+{% if page_branch %}
+{% if branch_level == 0 %}
+<ul id="nav">
+{% else %}
+<ul>
+{% endif %}
+    {% for page in page_branch %}
+    {% if page.is_primary and forloop.first %}
+	<li class="first{% if on_home %} active{% endif %}">
+	    <a href="{% url home %}">{% trans "Home" %}</a>
+	</li>
+	{% endif %}
+    {% if page.in_navigation %}
+    <li>
+    <a href="{% url page page.slug %}">{{ page.title }}</a>
+    {# subpages here #}
+    {% if settings.PAGES_MENU_SHOW_ALL or page.is_current_or_ascendant %}
+    {% page_menu page %}
+    {% endif %}
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endif %}
+{% endspaceless %}
