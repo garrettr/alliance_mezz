@@ -117,8 +117,8 @@ blockquote b {
     /*font-weight:bold;*/
     margin-bottom:10px;
     /* Clear floats */
-    float:left;
-    width:100%;
+    float:right;
+    /*width:100%;*/
     /* Bring the nav above everything else--uncomment if needed.
     position:relative;
     z-index:5;
@@ -131,10 +131,9 @@ blockquote b {
 }
 #nav a{
     display:block;
-    padding:7px;
+    padding:11px 7px;
     color:white;
     text-decoration:none;
-    font-size:90%;
     /*
     -moz-box-shadow: 0 0 5px 5px #111;
     -webkit-box-shadow: 0 0 5px 5px#111;
@@ -144,6 +143,7 @@ blockquote b {
 
 #nav a:hover{
     color: #63A2E6;
+    background: #222;
     /* text-decoration:underline; */
 }
 
@@ -157,7 +157,7 @@ blockquote b {
     border-radius:0px 5px 5px 5px;
 }
 #nav ul li{
-    /* padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
+    /* padding-top:2px; /* Introducing a padding between the li and the a give the illusion spaced items */
     /* border-top: solid 1px #333; */
     float:none;
     padding-right:5px;
@@ -165,6 +165,7 @@ blockquote b {
 #nav ul a{
     white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
     border-radius:0px;
+    padding:7px;
 }
 
 #nav li:hover ul{ /* Display the dropdown on hover */
@@ -173,11 +174,12 @@ blockquote b {
 #nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
     /* background:#6b0c36; */
     color: #63A2E6;
-    background: black;
+    background: #222;
     /* text-decoration:underline; */
 }
 #nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
     text-decoration:none;
+    background: black;
     color: #fff;
 }
 #nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
@@ -199,7 +201,7 @@ blockquote b {
     position:relative;
     top:0;
     background:rgba(0,0,0,0.7);
-    height:38px;
+    height:46px;
 }
 
 #header-content {
@@ -260,11 +262,19 @@ div#tab {
 }
     */
 
+#search {
+    position:relative;
+    float: right;
+    top:-23px; 
+    left:21px;
+}
+#id_submit { visibility:hidden; }
 #id_search {
-border: 0 none;
-    border-radius: 3px 3px 3px 3px;
+    background:rgba(255,255,255,0.7);
+    border: 0 none;
+    border-radius: 5px;
     margin: 8px 7px 5px 0;
     outline: 0 none;
-    padding: 3px 6px;
+    padding: 5px 6px;
     width: 150px;
 }
