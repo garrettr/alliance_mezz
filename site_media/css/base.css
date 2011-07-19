@@ -193,7 +193,7 @@ blockquote b {
 #header {
     color: #fdfdfd;
     background:url('../img/gfrocks2-1600.jpg') center no-repeat;
-    height: 216px; /* orig. 264px */
+    height: 240px; /* orig. 264px */
     margin-bottom:24px;
 }
 
@@ -265,8 +265,8 @@ div#tab {
 #search {
     position:relative;
     float: right;
-    top:-23px; 
-    left:21px;
+    top:-54px; 
+    left:20px;
 }
 #id_submit { visibility:hidden; }
 #id_search {
