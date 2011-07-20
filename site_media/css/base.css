@@ -270,7 +270,7 @@ div#tab {
 }
 #id_submit { visibility:hidden; }
 #id_search {
-    background: url("/site_media/img/search-light.png") no-repeat scroll 5px 5px rgba(255,255,255,0.7);
+    background: url("/static/img/search-light.png") no-repeat scroll 5px 5px rgba(255,255,255,0.7);
     border: 0 none;
     border-radius: 5px;
     margin: 8px 7px 5px 0;
